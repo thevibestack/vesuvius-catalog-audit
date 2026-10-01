@@ -12,7 +12,7 @@
 |---|---|
 | segment directories | 323 |
 | mesh variants (meta.json + x.tif header) | 1536 |
-| surface volumes (.zattrs + level-0 .zarray) | 697 |
+| surface volumes (693 Zarr `.zattrs` + level-0 `.zarray`, 4 TIFF stacks) | 697 |
 | mesh variants the catalogue indexes | 1532 |
 | surface volumes the catalogue indexes | 697 |
 | HTTP requests | 16821 |

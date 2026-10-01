@@ -6,7 +6,7 @@ OUT    ?= audit
 
 .PHONY: test audit collect analyze crosscheck clean
 
-test:                       ## 47 unit + CLI tests, no network
+test:                       ## 48 unit + CLI tests, no network
 	$(PYTHON) -m unittest discover -s tests
 
 audit:                      ## the whole audit, end to end (network, ~4 min)

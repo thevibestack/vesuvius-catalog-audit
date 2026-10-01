@@ -113,3 +113,10 @@ wrote CSV files, summary.json and SUMMARY.md under audit
 real	2m57.158s
 user	1m30.664s
 sys	0m43.199s
+
+--- post-audit correction (2026-10-01) ---
+The table above labels 697 "surface volumes (.zattrs + level-0 .zarray)". The accurate
+breakdown is **693 Zarr volumes (`.zattrs` + level-0 `.zarray`) + 4 TIFF stacks** (which
+declare no Zarr levels). The tally below it (696 populated / 1 with no chunks) is correct
+as it counts all 697. The log itself is left as it was emitted; the label is corrected in
+audit/SUMMARY.md.
