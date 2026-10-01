@@ -1,0 +1,97 @@
+{
+ "meta": {
+  "generated_at": "2026-10-01T13:38:38Z",
+  "bucket_url": "https://vesuvius-challenge-open-data.s3.amazonaws.com/",
+  "bucket": "vesuvius-challenge-open-data",
+  "catalogue_generated_at": "2026-10-01T13:35:42Z",
+  "catalogue_source": "https://vesuvius-challenge-open-data.s3.amazonaws.com/metadata.json",
+  "villa_commit": "7d6a82c71ed05ac1bd5c2e956d15400b564583d5",
+  "version": "1.0.0"
+ },
+ "inventory_stats": {
+  "segments": 323,
+  "meshes": 1536,
+  "meshes_in_catalogue": 1532,
+  "volumes": 697,
+  "volumes_in_catalogue": 697,
+  "errors": 0,
+  "http_requests": 16821,
+  "bytes_read": 26467289
+ },
+ "checks": {
+  "1727": {
+   "volumes": 697,
+   "pairs": 3650,
+   "segments": 306,
+   "by_scope": {
+    "same_frame": {
+     "volumes_tested": 693,
+     "reproduced_at_documented_scale": 164,
+     "reproduced_at_another_scale": 141,
+     "not_reproduced_from_any_published_variant": 388,
+     "no_mesh_variant_available": 0
+    },
+    "all": {
+     "volumes_tested": 693,
+     "reproduced_at_documented_scale": 693,
+     "reproduced_at_another_scale": 0,
+     "not_reproduced_from_any_published_variant": 0,
+     "no_mesh_variant_available": 0
+    }
+   },
+   "gained_from_all_variants": 388,
+   "gained_by_variant_kind": {
+    "transformed": 388
+   },
+   "gained_best_variant_names_the_volume": 388,
+   "gained_best_variant_name_comparable": 388,
+   "reproduced_model_variant_names_the_volume": 640,
+   "still_not_reproduced": 0,
+   "still_not_reproduced_by_sample": {},
+   "reproduced_by_clean_scale": {
+    "4.0": 104,
+    "None": 30,
+    "2.0": 7
+   },
+   "canvas_mismatch_with_level0": 0,
+   "comparability_with_2026_09_07": {
+    "volumes": 697,
+    "same_frame_scope_and_render_scale_1": 164,
+    "all_variants_render_scale_1": 581
+   },
+   "volumes_missing_zattrs": 4,
+   "volumes_missing_level0": 4,
+   "volumes_not_in_catalogue": 0
+  },
+  "1892": {
+   "populated": 696,
+   "no_chunks_at_any_level": 1
+  },
+  "1893": {
+   "consistent": 689,
+   "units_absent": 4
+  },
+  "1893_source_lines": 18,
+  "1734": {
+   "marker_segments": 28,
+   "exact_scaled_marker": 28
+  },
+  "1730": {
+   "segments": 20,
+   "with_z_overrun": 8,
+   "coverage": {
+    "segments": 323,
+    "segments_with_creation_date": 323,
+    "segments_with_resolvable_scan_date": 323,
+    "unparseable_creation_date": [],
+    "declared_volume_not_found": []
+   }
+  }
+ },
+ "inputs": {
+  "inventory": "/Users/jesuslizarragapena/.hermes/mi-primer-trabajo/trabajos/vesuvius-repro-audit/vesuvius-catalog-audit/audit/raw/inventory.json",
+  "inventory_sha256": "3de11d8ce45e57856e202dcf6b4ea4c62d9e033433ef26d83638bd2604729a33",
+  "catalogue": "/Users/jesuslizarragapena/.hermes/mi-primer-trabajo/trabajos/vesuvius-repro-audit/vesuvius-catalog-audit/audit/raw/catalogue.json",
+  "catalogue_sha256": "7c824d80ab828a25dd079e306ef9b41fa55c67b862a6744ff24460afc2ac1cfa"
+ }
+}

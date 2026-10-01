@@ -1,0 +1,10 @@
+# The raw collected documents: large, regenerable, and their SHA-256 is recorded
+# in audit/summary.json, so a re-collection can be compared with the one behind
+# the published numbers.
+audit/raw/
+
+__pycache__/
+*.py[cod]
+.venv/
+.venv-dev/
+.DS_Store

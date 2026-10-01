@@ -1,0 +1,326 @@
+python3 -m unittest discover -s tests
+....................................# Vesuvius open-data catalogue audit — generated summary
+
+- run at: `2026-10-01T13:35:41Z`
+- bucket: `https://vesuvius-challenge-open-data.s3.amazonaws.com/` (anonymous, metadata and headers only)
+- catalogue `metadata.json` fetched: `None`
+- villa commit the formula is quoted from: `0000000000000000000000000000000000000000`
+- auditor version: `1.0.0`
+
+## What was read
+
+| quantity | value |
+|---|---|
+| segment directories | 1 |
+| mesh variants (meta.json + x.tif header) | 1 |
+| surface volumes (.zattrs + level-0 .zarray) | 1 |
+| mesh variants the catalogue indexes |  |
+| surface volumes the catalogue indexes |  |
+| HTTP requests | 0 |
+| bytes read | 0 |
+| collector errors | 0 |
+
+## Catalogue vs bucket
+
+| quantity | value |
+|---|---|
+| segments in the catalogue | 1 |
+| segment directories in the bucket | 1 |
+| catalogue segments with no bucket directory | 0 |
+
+## #1727 — surface volumes reproducible from a published mesh
+
+| mesh-variant scope | volumes tested | reproduced at documented scale | reproduced at another scale | not reproducible | no mesh available |
+|---|---|---|---|---|---|
+| same_frame | 1 | 1 | 0 | 0 | 0 |
+| all | 1 | 1 | 0 | 0 | 0 |
+
+- volumes gained by widening the scope to every published variant: **0** (none); of them, **0** are reproduced by a variant whose own name carries the volume's id and voxel size (0 comparable)
+- still not reproducible under any published variant: **0** (none)
+- `canvas_size` disagreeing with level 0's shape: 0
+- volumes with no `.zattrs`: 0; with no level-0 `.zarray`: 0; not indexed by the catalogue: 0
+- under the 2026-09-07 assumptions (same-frame variants only, render scale 1): **1 of 1** reproduce exactly; over every published variant: 1 of 1
+
+## #1892 — declared pyramid levels with no chunks
+
+| verdict | volumes |
+|---|---|
+| populated | 1 |
+
+## #1893 — voxel size written under a contradicting unit label
+
+| verdict | volumes |
+|---|---|
+| consistent | 1 |
+
+- source check: not run (pass `--villa-src <checkout of ScrollPrize/villa>`)
+
+## #1734 — `bbox_transformed` built from the `-1` marker
+
+| quantity | value |
+|---|---|
+| segments whose stored bbox carries the marker | 0 |
+| of those, `bbox_transformed` == stored x downscale exactly | 0 |
+| by sample | none |
+
+## #1730 — segments declaring a volume scanned after them
+
+| quantity | value |
+|---|---|
+| segments | 1 |
+| segments the date join could examine | 1 |
+| by sample | PHercTEST: 1 |
+| median days the scan is later | 120 |
+| of those, stored bbox overruns the declared volume's z extent | 0 |
+
+---
+
+Every number above is computed from the files named in `audit/raw/` and the CSV files beside this document. Regenerate with `python -m vcaudit all --outdir audit`.
+
+wrote CSV files, summary.json and SUMMARY.md under /var/folders/mp/9mmn0q5d04112v7tmffqzrgm0000gn/T/tmp5yxmfg4e/audit
+.# Vesuvius open-data catalogue audit — generated summary
+
+- run at: `2026-10-01T13:35:41Z`
+- bucket: `https://vesuvius-challenge-open-data.s3.amazonaws.com/` (anonymous, metadata and headers only)
+- catalogue `metadata.json` fetched: `None`
+- villa commit the formula is quoted from: `0000000000000000000000000000000000000000`
+- auditor version: `1.0.0`
+
+## What was read
+
+| quantity | value |
+|---|---|
+| segment directories | 1 |
+| mesh variants (meta.json + x.tif header) | 1 |
+| surface volumes (.zattrs + level-0 .zarray) | 1 |
+| mesh variants the catalogue indexes |  |
+| surface volumes the catalogue indexes |  |
+| HTTP requests | 0 |
+| bytes read | 0 |
+| collector errors | 0 |
+
+## Catalogue vs bucket
+
+| quantity | value |
+|---|---|
+| segments in the catalogue | 1 |
+| segment directories in the bucket | 1 |
+| catalogue segments with no bucket directory | 0 |
+
+## #1727 — surface volumes reproducible from a published mesh
+
+| mesh-variant scope | volumes tested | reproduced at documented scale | reproduced at another scale | not reproducible | no mesh available |
+|---|---|---|---|---|---|
+| same_frame | 1 | 1 | 0 | 0 | 0 |
+| all | 1 | 1 | 0 | 0 | 0 |
+
+- volumes gained by widening the scope to every published variant: **0** (none); of them, **0** are reproduced by a variant whose own name carries the volume's id and voxel size (0 comparable)
+- still not reproducible under any published variant: **0** (none)
+- `canvas_size` disagreeing with level 0's shape: 0
+- volumes with no `.zattrs`: 0; with no level-0 `.zarray`: 0; not indexed by the catalogue: 0
+- under the 2026-09-07 assumptions (same-frame variants only, render scale 1): **1 of 1** reproduce exactly; over every published variant: 1 of 1
+
+## #1892 — declared pyramid levels with no chunks
+
+| verdict | volumes |
+|---|---|
+| populated | 1 |
+
+## #1893 — voxel size written under a contradicting unit label
+
+| verdict | volumes |
+|---|---|
+| consistent | 1 |
+
+- source check: not run (pass `--villa-src <checkout of ScrollPrize/villa>`)
+
+## #1734 — `bbox_transformed` built from the `-1` marker
+
+| quantity | value |
+|---|---|
+| segments whose stored bbox carries the marker | 0 |
+| of those, `bbox_transformed` == stored x downscale exactly | 0 |
+| by sample | none |
+
+## #1730 — segments declaring a volume scanned after them
+
+| quantity | value |
+|---|---|
+| segments | 1 |
+| segments the date join could examine | 1 |
+| by sample | PHercTEST: 1 |
+| median days the scan is later | 120 |
+| of those, stored bbox overruns the declared volume's z extent | 0 |
+
+---
+
+Every number above is computed from the files named in `audit/raw/` and the CSV files beside this document. Regenerate with `python -m vcaudit all --outdir audit`.
+
+wrote CSV files, summary.json and SUMMARY.md under /var/folders/mp/9mmn0q5d04112v7tmffqzrgm0000gn/T/tmpk_zbo9jt/audit
+.# Vesuvius open-data catalogue audit — generated summary
+
+- run at: `2026-10-01T13:35:41Z`
+- bucket: `https://vesuvius-challenge-open-data.s3.amazonaws.com/` (anonymous, metadata and headers only)
+- catalogue `metadata.json` fetched: `None`
+- villa commit the formula is quoted from: `0000000000000000000000000000000000000000`
+- auditor version: `1.0.0`
+
+## What was read
+
+| quantity | value |
+|---|---|
+| segment directories | 1 |
+| mesh variants (meta.json + x.tif header) | 1 |
+| surface volumes (.zattrs + level-0 .zarray) | 1 |
+| mesh variants the catalogue indexes |  |
+| surface volumes the catalogue indexes |  |
+| HTTP requests | 0 |
+| bytes read | 0 |
+| collector errors | 0 |
+
+## Catalogue vs bucket
+
+| quantity | value |
+|---|---|
+| segments in the catalogue | 1 |
+| segment directories in the bucket | 1 |
+| catalogue segments with no bucket directory | 0 |
+
+## #1727 — surface volumes reproducible from a published mesh
+
+| mesh-variant scope | volumes tested | reproduced at documented scale | reproduced at another scale | not reproducible | no mesh available |
+|---|---|---|---|---|---|
+| same_frame | 1 | 1 | 0 | 0 | 0 |
+| all | 1 | 1 | 0 | 0 | 0 |
+
+- volumes gained by widening the scope to every published variant: **0** (none); of them, **0** are reproduced by a variant whose own name carries the volume's id and voxel size (0 comparable)
+- still not reproducible under any published variant: **0** (none)
+- `canvas_size` disagreeing with level 0's shape: 0
+- volumes with no `.zattrs`: 0; with no level-0 `.zarray`: 0; not indexed by the catalogue: 0
+- under the 2026-09-07 assumptions (same-frame variants only, render scale 1): **1 of 1** reproduce exactly; over every published variant: 1 of 1
+
+## #1892 — declared pyramid levels with no chunks
+
+| verdict | volumes |
+|---|---|
+| populated | 1 |
+
+## #1893 — voxel size written under a contradicting unit label
+
+| verdict | volumes |
+|---|---|
+| consistent | 1 |
+
+- source check: not run (pass `--villa-src <checkout of ScrollPrize/villa>`)
+
+## #1734 — `bbox_transformed` built from the `-1` marker
+
+| quantity | value |
+|---|---|
+| segments whose stored bbox carries the marker | 0 |
+| of those, `bbox_transformed` == stored x downscale exactly | 0 |
+| by sample | none |
+
+## #1730 — segments declaring a volume scanned after them
+
+| quantity | value |
+|---|---|
+| segments | 1 |
+| segments the date join could examine | 1 |
+| by sample | PHercTEST: 1 |
+| median days the scan is later | 120 |
+| of those, stored bbox overruns the declared volume's z extent | 0 |
+
+---
+
+Every number above is computed from the files named in `audit/raw/` and the CSV files beside this document. Regenerate with `python -m vcaudit all --outdir audit`.
+
+wrote CSV files, summary.json and SUMMARY.md under /var/folders/mp/9mmn0q5d04112v7tmffqzrgm0000gn/T/tmplu46h8da/audit
+.# Vesuvius open-data catalogue audit — generated summary
+
+- run at: `2026-10-01T13:35:41Z`
+- bucket: `https://vesuvius-challenge-open-data.s3.amazonaws.com/` (anonymous, metadata and headers only)
+- catalogue `metadata.json` fetched: `None`
+- villa commit the formula is quoted from: `0000000000000000000000000000000000000000`
+- auditor version: `1.0.0`
+
+## What was read
+
+| quantity | value |
+|---|---|
+| segment directories | 1 |
+| mesh variants (meta.json + x.tif header) | 1 |
+| surface volumes (.zattrs + level-0 .zarray) | 1 |
+| mesh variants the catalogue indexes |  |
+| surface volumes the catalogue indexes |  |
+| HTTP requests | 0 |
+| bytes read | 0 |
+| collector errors | 0 |
+
+## Catalogue vs bucket
+
+| quantity | value |
+|---|---|
+| segments in the catalogue | 1 |
+| segment directories in the bucket | 1 |
+| catalogue segments with no bucket directory | 0 |
+
+## #1727 — surface volumes reproducible from a published mesh
+
+| mesh-variant scope | volumes tested | reproduced at documented scale | reproduced at another scale | not reproducible | no mesh available |
+|---|---|---|---|---|---|
+| same_frame | 1 | 1 | 0 | 0 | 0 |
+| all | 1 | 1 | 0 | 0 | 0 |
+
+- volumes gained by widening the scope to every published variant: **0** (none); of them, **0** are reproduced by a variant whose own name carries the volume's id and voxel size (0 comparable)
+- still not reproducible under any published variant: **0** (none)
+- `canvas_size` disagreeing with level 0's shape: 0
+- volumes with no `.zattrs`: 0; with no level-0 `.zarray`: 0; not indexed by the catalogue: 0
+- under the 2026-09-07 assumptions (same-frame variants only, render scale 1): **1 of 1** reproduce exactly; over every published variant: 1 of 1
+
+## #1892 — declared pyramid levels with no chunks
+
+| verdict | volumes |
+|---|---|
+| populated | 1 |
+
+## #1893 — voxel size written under a contradicting unit label
+
+| verdict | volumes |
+|---|---|
+| consistent | 1 |
+
+- source check: not run (pass `--villa-src <checkout of ScrollPrize/villa>`)
+
+## #1734 — `bbox_transformed` built from the `-1` marker
+
+| quantity | value |
+|---|---|
+| segments whose stored bbox carries the marker | 0 |
+| of those, `bbox_transformed` == stored x downscale exactly | 0 |
+| by sample | none |
+
+## #1730 — segments declaring a volume scanned after them
+
+| quantity | value |
+|---|---|
+| segments | 1 |
+| segments the date join could examine | 1 |
+| by sample | PHercTEST: 1 |
+| median days the scan is later | 120 |
+| of those, stored bbox overruns the declared volume's z extent | 0 |
+
+---
+
+Every number above is computed from the files named in `audit/raw/` and the CSV files beside this document. Regenerate with `python -m vcaudit all --outdir audit`.
+
+wrote CSV files, summary.json and SUMMARY.md under /var/folders/mp/9mmn0q5d04112v7tmffqzrgm0000gn/T/tmp2thj48q7/audit
+........
+----------------------------------------------------------------------
+Ran 47 tests in 0.190s
+
+OK
+
+real	0m0.276s
+user	0m0.234s
+sys	0m0.037s

@@ -1,0 +1,19 @@
+file,line,tag,code
+vc_render_tifxyz.cpp,1349,voxel-unit default,"(""voxel-unit"", po::value<std::string>()->default_value(""nanometer""), ""Unit of the number given to --voxel-size (nanometer, micrometer, millimeter, meter). Sizes read from volume metadata are always declared in micrometer."");"
+Zarr.cpp,369,unit passed to the writer,"Json buildMultiscales(double baseVoxelSize, const std::string& voxelUnit,"
+Zarr.cpp,379,unit passed to the writer,"if (physicalSizeKnown && !voxelUnit.empty()) ax[""unit""] = voxelUnit;"
+Zarr.cpp,434,unit passed to the writer,"double baseVoxelSize, const std::string& voxelUnit,"
+Zarr.cpp,458,unit passed to the writer,"multiscales.push_back(buildMultiscales(baseVoxelSize, voxelUnit, sliceStep, pixelsPerVoxel));"
+vc_render_tifxyz.cpp,1655,unit parsed from meta.json,"const std::string voxel_unit = parsed[""voxel-unit""].as<std::string>();"
+vc_render_tifxyz.cpp,1664,unit parsed from meta.json,"if (!explicitMicrometerPerVoxel(explicitVoxelSize, voxel_unit)) {"
+vc_render_tifxyz.cpp,1665,unit parsed from meta.json,"logPrintf(stderr, ""Error: unsupported --voxel-unit: %s\n"", voxel_unit.c_str());"
+vc_render_tifxyz.cpp,1682,unit parsed from meta.json,std::string zarr_voxel_unit = voxel_unit;
+vc_render_tifxyz.cpp,1691,unit parsed from meta.json,voxel_unit);
+vc_render_tifxyz.cpp,1707,unit parsed from meta.json,"if (const char* unit = zarrVoxelUnit(resolved, voxel_unit)) {"
+vc_render_tifxyz.cpp,1708,unit parsed from meta.json,zarr_voxel_unit = unit;
+vc_render_tifxyz.cpp,1717,unit parsed from meta.json,zarr_voxel_unit.c_str());
+vc_render_tifxyz.cpp,1735,unit parsed from meta.json,zarr_voxel_unit.clear();
+vc_render_tifxyz.cpp,1738,unit parsed from meta.json,"// Physical size of one *level-g* voxel, stated in `zarr_voxel_unit`. The"
+vc_render_tifxyz.cpp,1743,unit parsed from meta.json,// so this argument MUST be in the same unit as zarr_voxel_unit -- and 0
+vc_render_tifxyz.cpp,1915,unit parsed from meta.json,"render_level_voxel_size, zarr_voxel_unit, tgt_scale);"
+vc_render_tifxyz.cpp,2136,unit parsed from meta.json,"render_level_voxel_size, zarr_voxel_unit, tgt_scale);"

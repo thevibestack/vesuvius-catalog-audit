@@ -1,0 +1,34 @@
+python3 scripts/crosscheck_2026_09_07.py \
+	    --theirs /Users/jesuslizarragapena/.hermes/profiles/constructor-trabajo/cache/scratch/refrepo/audit/pairs.json \
+	    --theirs-inventory /Users/jesuslizarragapena/.hermes/profiles/constructor-trabajo/cache/scratch/refrepo/audit/inventory.json \
+	    --mine audit/csv/1727_pairs.csv \
+	    --mine-volumes audit/csv/1727_volumes.csv
+their pairs:            1260
+this run's pairs:       3650
+pairs in both:          1260
+  stored grid agrees:   1260/1260
+  renderer size agrees: 1250/1260
+  reference canvas:     1260/1260
+  match verdict agrees: 1260/1260
+  renderer-size differences elsewhere explained as the earlier run's scale axis ordering: 10/10
+     ~ intermediate/tifxyz_original stored=['173', '104'] scale=['0.0500061', '0.0500321'] mine=['3458', '2080'] theirs=[3460, 2079]
+     ~ intermediate/tifxyz_original stored=['173', '104'] scale=['0.0500061', '0.0500321'] mine=['3458', '2080'] theirs=[3460, 2079]
+     ~ intermediate/tifxyz_original stored=['168', '123'] scale=['0.0500021', '0.0500195'] mine=['3359', '2460'] theirs=[3360, 2459]
+     ~ intermediate/tifxyz_original stored=['168', '123'] scale=['0.0500021', '0.0500195'] mine=['3359', '2460'] theirs=[3360, 2459]
+     ~ intermediate/tifxyz_original stored=['177', '116'] scale=['0.0500132', '0.0500224'] mine=['3538', '2319'] theirs=[3539, 2319]
+pairs they measured, absent here: 0
+pairs measured here, absent there: 2390
+   + ('PHerc0009B/segments/20250510172639', '20250510172639-on-20250521125136-8.64um.tifxyz', '2.401um-0.35m-77keV-volume-20250820154339.zarr')
+   + ('PHerc0009B/segments/20250510172639', '20250510172639-on-20250521125136-8.64um.tifxyz', '8.64um-1.2m-116keV-volume-20250521125136.zarr')
+   + ('PHerc0009B/segments/20250510172639', '20250510172639-on-20250820154339-2.401um.tifxyz', '2.401um-0.35m-77keV-volume-20250820154339.zarr')
+   + ('PHerc0009B/segments/20250510172639', '20250510172639-on-20250820154339-2.401um.tifxyz', '8.64um-1.2m-116keV-volume-20250521125136.zarr')
+   + ('PHerc0009B/segments/20250510172639', 'intermediate/tifxyz_normalized', '2.401um-0.35m-77keV-volume-20250820154339.zarr')
+   + ('PHerc0009B/segments/20250510172639', 'intermediate/tifxyz_normalized', '8.64um-1.2m-116keV-volume-20250521125136.zarr')
+   + ('PHerc0009B/segments/20250510172639', 'intermediate/tifxyz_original', '2.401um-0.35m-77keV-volume-20250820154339.zarr')
+   + ('PHerc0009B/segments/20250510172639', 'intermediate/tifxyz_original', '8.64um-1.2m-116keV-volume-20250521125136.zarr')
+   + ('PHerc0009B/segments/20250510172804', '20250510172804-on-20250521125136-8.64um.tifxyz', '2.401um-0.35m-77keV-volume-20250820154339.zarr')
+   + ('PHerc0009B/segments/20250510172804', '20250510172804-on-20250521125136-8.64um.tifxyz', '8.64um-1.2m-116keV-volume-20250521125136.zarr')
+verdict mismatches: 0
+
+their inventory: 315 segments, 593 mesh variants, 628 surface volumes
+  mesh directories whose leaf name contains a dot: 0 of 593
