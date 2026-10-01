@@ -9,6 +9,8 @@ through) survives every unit test and still kills `analyze`. No network is used:
 
 from __future__ import annotations
 
+import contextlib
+import io
 import json
 import os
 import shutil
@@ -67,9 +69,15 @@ class TestAnalyzeCommand(unittest.TestCase):
         self.out = os.path.join(self.dir, "audit")
 
     def run_analyze(self):
-        return cli.cmd_analyze(Namespace(
-            inventory=self.inv_path, catalogue=self.cat_path, outdir=self.out,
-            villa_src=None, villa_commit="0" * 40))
+        # `cmd_analyze` prints the generated report to stdout; capture it so a test
+        # run stays readable, and return it for the assertions that need it.
+        buf = io.StringIO()
+        with contextlib.redirect_stdout(buf):
+            rc = cli.cmd_analyze(Namespace(
+                inventory=self.inv_path, catalogue=self.cat_path, outdir=self.out,
+                villa_src=None, villa_commit="0" * 40))
+        self.stdout = buf.getvalue()
+        return rc
 
     def test_analyze_writes_every_declared_output(self):
         self.assertEqual(self.run_analyze(), 0)
@@ -78,6 +86,15 @@ class TestAnalyzeCommand(unittest.TestCase):
                      "csv/1893_source_lines.csv", "csv/1734_bbox_marker.csv",
                      "csv/1730_scan_after_segment.csv", "csv/1727_crossscan_recovered.csv"):
             self.assertTrue(os.path.exists(os.path.join(self.out, name)), name)
+
+    def test_the_printed_report_is_the_report_that_was_written(self):
+        self.run_analyze()
+        with open(os.path.join(self.out, "SUMMARY.md")) as fh:
+            written = fh.read()
+        # stdout is the report plus the closing "wrote ..." line.
+        self.assertTrue(self.stdout.startswith(written))
+        self.assertIn("#1727", written)
+        self.assertIn("wrote CSV files, summary.json and SUMMARY.md", self.stdout)
 
     def test_the_summary_carries_the_coverage_count_of_the_date_join(self):
         """Regression: the #1730 coverage count has to reach both outputs."""

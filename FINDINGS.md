@@ -278,7 +278,7 @@ published `pairs.json` predates its own correction. This audit follows the sourc
 ## How to check any of this
 
 ```console
-$ python3 -m unittest discover -s tests        # 47 tests, no network, ~0.3s
+$ python3 -m unittest discover -s tests        # 48 tests, no network, ~0.3s
 $ python3 -m vcaudit analyze \
       --inventory audit/raw/inventory.json \
       --catalogue audit/raw/catalogue.json \

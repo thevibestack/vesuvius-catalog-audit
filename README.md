@@ -14,8 +14,8 @@ The point is not to list defects. It is to answer the question a consumer actual
 has — *can I trust what this catalogue says* — with a per-artifact answer, on the
 whole catalogue, reproducibly.
 
-Published on 2026-10-01, before any fix, so that the numbers can be checked against
-the same bucket state.
+Written and run on 2026-10-01, before any fix, so that the numbers can be checked
+against the same bucket state.
 
 ## Results at a glance
 
@@ -44,7 +44,7 @@ Requires Python 3.9+ and nothing else. No `pip install`, no virtualenv, no AWS
 credentials, no environment variables.
 
 ```console
-$ python3 -m unittest discover -s tests     # 47 tests, ~0.3s, no network
+$ python3 -m unittest discover -s tests     # 48 tests, ~0.3s, no network
 $ python3 -m vcaudit all --outdir audit     # the whole audit, ~3 min
 ```
 
