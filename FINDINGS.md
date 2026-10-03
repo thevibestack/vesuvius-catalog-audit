@@ -310,3 +310,19 @@ probability maps, not physical data: expected, not a defect), 33/33 ink-labels z
 clean (micrometer, scale == name), 452 .jpg previews out of scope (lossy, no physical
 metadata expected). Verdict: no defect to report. The only ink finding remains #1962.
 Raw per-path results: audit/raw/capa4b-tif-sweep-20261003.json.
+
+
+---
+
+## Not filed (2026-10-04): Layer 5 — renders & aux swept clean
+
+Full sweep of the remaining catalog surface (211 entries):
+- alpha-render 66: 3 TIFF layouts, all unitless (XRes=1.0/ResUnit=1 or no res tags),
+  ImageDescription JSON with full command_line + source sha256 (excellent provenance).
+- alpha-render-downsampled 66 JPEG: 66/66 Exif 25.4 px/in standard preview convention.
+- lasagna 32: cos/nx channels, pixel axes (unrolling map by design), scales 8/16/32 consistent.
+- normal-grids 41: identical metadata.json schema, grid-step=64 uniform.
+- umbilicus 6: points == declared 6/6, voxelsize_um declared, annotator recorded.
+Verdict: no defects. Catalog coverage is now COMPLETE (layers 1-5). Published findings
+remain #1951 and #1962.
+Raw per-path results: audit/raw/capa5-*-sweep-20261004.json.
