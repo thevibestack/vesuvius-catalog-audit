@@ -299,3 +299,14 @@ inventory: 1 segments, 4 mesh variants, 2 surface volumes, 0 errors
 transport: 95 requests, 1.5 MB read, 17s wall
 wrote /tmp/one/inventory.json and /tmp/one/catalogue.json
 ```
+
+
+---
+
+## Not filed (2026-10-03): Layer 4b — ink 2D products swept clean
+
+Full sweep: 284/284 unique .tif paths (XRes=1.0/ResUnit=1 in all 284 — TIFF convention for
+probability maps, not physical data: expected, not a defect), 33/33 ink-labels zarr swept
+clean (micrometer, scale == name), 452 .jpg previews out of scope (lossy, no physical
+metadata expected). Verdict: no defect to report. The only ink finding remains #1962.
+Raw per-path results: audit/raw/capa4b-tif-sweep-20261003.json.
